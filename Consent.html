@@ -1,0 +1,157 @@
+<!doctype html>
+<html lang="fa" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="robots" content="noindex, nofollow">
+<meta name="theme-color" content="#0F5E5A">
+<title>همیار وام · رضایت‌نامه</title>
+<link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="assets/site.css">
+<style>
+body{margin:0;background:#FBF7F0}
+*{box-sizing:border-box}
+button,input{font-family:inherit}
+a{color:#0F5E5A}a:hover{color:#0B4744}
+@keyframes hvWave{0%,100%{transform:scaleY(.45)}50%{transform:scaleY(1)}}
+.hv-wave span{transform-origin:center;animation:hvWave 1s ease-in-out infinite}
+.hv-wave span:nth-child(2n){animation-delay:.15s}
+.hv-wave span:nth-child(3n){animation-delay:.3s}
+</style>
+</head>
+<body class="hv-mobile">
+<div id="hv-app"></div>
+<template id="hv-tpl">
+<div class="hv-root" dir="rtl" style="width: 390px; height: 1320px; display: flex; flex-direction: column; background: #FBF7F0; color: #1F2328; font-family: 'Vazirmatn', Tahoma, sans-serif; font-size: 18px; line-height: 1.8; overflow: hidden">
+
+  <header style="display: flex; align-items: center; justify-content: space-between; gap: 12px; padding: 18px 20px 6px">
+    <a href="Checklist.dc.html" aria-label="بازگشت" style="width: 48px; height: 48px; border-radius: 14px; background: #FFFFFF; border: 1px solid #E8DDCB; display: flex; align-items: center; justify-content: center; color: #1F2328">
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"/><path d="m13 6 6 6-6 6"/></svg>
+    </a>
+    <button type="button" style="height: 48px; padding: 0 16px; border-radius: 999px; border: none; background: #E2EEEB; color: #0B4744; display: flex; align-items: center; gap: 8px; font-size: 16px; font-weight: 700; cursor: pointer">
+      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M11 5 6 9H3v6h3l5 4z"/><path d="M15.5 8.5a5 5 0 0 1 0 7"/><path d="M18.5 5.5a9 9 0 0 1 0 13"/></svg>
+      برایم بخوان
+    </button>
+  </header>
+
+  <main style="flex: 1; display: flex; flex-direction: column; gap: 14px; padding: 12px 20px 16px; min-height: 0">
+    <div style="display: flex; flex-direction: column; gap: 4px">
+      <h1 style="margin: 0; font-size: 28px; line-height: 1.5; font-weight: 900">رضایت‌نامه ساده</h1>
+      <p style="margin: 0; font-size: 16px; line-height: 1.75; color: #57534E">سه بند کوتاه. اگر بخواهید، برایتان می‌خوانیم.</p>
+    </div>
+
+    <button type="button" onClick="{{togglePlay}}" style="min-height: 76px; border-radius: 22px; border: none; background: #0F5E5A; color: #FFFFFF; display: flex; align-items: center; gap: 14px; padding: 12px 16px; text-align: right; cursor: pointer">
+      <span style="width: 52px; height: 52px; flex: none; border-radius: 50%; background: #FBF7F0; color: #0B4744; display: flex; align-items: center; justify-content: center">
+        <sc-if value="{{notPlaying}}" hint-placeholder-val="{{true}}"><svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M7 4.5v15l12-7.5z"/></svg></sc-if>
+        <sc-if value="{{playing}}" hint-placeholder-val="{{false}}"><svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><rect x="6" y="5" width="4" height="14" rx="1"/><rect x="14" y="5" width="4" height="14" rx="1"/></svg></sc-if>
+      </span>
+      <span style="flex: 1; display: flex; flex-direction: column; line-height: 1.5">
+        <span style="font-size: 18px; font-weight: 800">{{playLabel}}</span>
+        <span class="{{waveCls}}" style="display: flex; align-items: center; gap: 3px; height: 22px; margin-top: 4px">
+          <span style="width: 4px; height: 10px; border-radius: 9px; background: #9FD3CB"></span>
+          <span style="width: 4px; height: 18px; border-radius: 9px; background: #9FD3CB"></span>
+          <span style="width: 4px; height: 14px; border-radius: 9px; background: #9FD3CB"></span>
+          <span style="width: 4px; height: 22px; border-radius: 9px; background: #9FD3CB"></span>
+          <span style="width: 4px; height: 12px; border-radius: 9px; background: #9FD3CB"></span>
+          <span style="width: 4px; height: 20px; border-radius: 9px; background: #9FD3CB"></span>
+          <span style="width: 4px; height: 8px; border-radius: 9px; background: #9FD3CB"></span>
+          <span style="width: 4px; height: 16px; border-radius: 9px; background: #9FD3CB"></span>
+          <span style="width: 4px; height: 22px; border-radius: 9px; background: #9FD3CB"></span>
+          <span style="width: 4px; height: 12px; border-radius: 9px; background: #9FD3CB"></span>
+          <span style="width: 4px; height: 18px; border-radius: 9px; background: #9FD3CB"></span>
+          <span style="width: 4px; height: 10px; border-radius: 9px; background: #9FD3CB"></span>
+        </span>
+      </span>
+      <span style="font-size: 15px; font-weight: 700; color: #CFE6E2">۱:۱۰</span>
+    </button>
+
+    <ol style="list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 10px">
+      <li style="border-radius: 20px; background: #FFFFFF; border: 1px solid #EADFCF; padding: 14px; display: flex; gap: 12px">
+        <span style="width: 44px; height: 50px; flex: none; border-radius: 22px 22px 10px 10px; background: #E2EEEB; color: #0F5E5A; display: flex; align-items: center; justify-content: center"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="4" y="11" width="16" height="10" rx="2"/><path d="M8 11V7a4 4 0 0 1 8 0v4"/></svg></span>
+        <div style="display: flex; flex-direction: column; gap: 2px">
+          <span style="font-size: 14px; font-weight: 800; color: #0F5E5A">بند ۱ · مدارک شما</span>
+          <span style="font-size: 17px; font-weight: 700; line-height: 1.75">مدارک شما فقط برای پیگیری پرونده وامتان است و بعد از بسته شدن پرونده پاک می‌شود.</span>
+        </div>
+      </li>
+      <li style="border-radius: 20px; background: #FFFFFF; border: 1px solid #EADFCF; padding: 14px; display: flex; gap: 12px">
+        <span style="width: 44px; height: 50px; flex: none; border-radius: 22px 22px 10px 10px; background: #E2EEEB; color: #0F5E5A; display: flex; align-items: center; justify-content: center"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 10 12 4l9 6"/><path d="M5 10v8M9.5 10v8M14.5 10v8M19 10v8"/><path d="M3 21h18"/></svg></span>
+        <div style="display: flex; flex-direction: column; gap: 2px">
+          <span style="font-size: 14px; font-weight: 800; color: #0F5E5A">بند ۲ · ما و بانک</span>
+          <span style="font-size: 17px; font-weight: 700; line-height: 1.75">ما نماینده بانک رسالت نیستیم. تصمیم نهایی وام با بانک است و ما قول وام نمی‌دهیم.</span>
+        </div>
+      </li>
+      <li style="border-radius: 20px; background: #FFFFFF; border: 1px solid #EADFCF; padding: 14px; display: flex; gap: 12px">
+        <span style="width: 44px; height: 50px; flex: none; border-radius: 22px 22px 10px 10px; background: #FCEFD9; color: #92400E; display: flex; align-items: center; justify-content: center"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3 4 6v6c0 4.5 3.4 8.3 8 9 4.6-.7 8-4.5 8-9V6z"/><path d="M12 9v4M12 16h.01"/></svg></span>
+        <div style="display: flex; flex-direction: column; gap: 2px">
+          <span style="font-size: 14px; font-weight: 800; color: #92400E">بند ۳ · رمز و کد</span>
+          <span style="font-size: 17px; font-weight: 700; line-height: 1.75">ما هرگز رمز بانکی، رمز دوم یا کد پیامکی شما را نمی‌پرسیم. کارهای هویتی را خودتان انجام می‌دهید و ما کنارتان هستیم.</span>
+        </div>
+      </li>
+    </ol>
+
+    <section style="border-radius: 22px; background: #F3EBDD; padding: 16px; display: flex; flex-direction: column; gap: 10px">
+      <span style="font-size: 16px; font-weight: 800; color: #57534E">هزینه‌ها، شفاف و از اول</span>
+      <div style="display: flex; align-items: baseline; justify-content: space-between; gap: 10px; border-radius: 16px; background: #FFFFFF; padding: 12px 14px">
+        <span style="font-size: 16px; font-weight: 700">هزینه خدمت همیار وام</span>
+        <span style="font-size: 20px; font-weight: 900; color: #0B4744">[مبلغ خدمت]</span>
+      </div>
+      <span style="font-size: 14px; color: #57534E; line-height: 1.7">یک مبلغ ثابت، قبل از شروع کار.</span>
+      <span style="font-size: 15px; font-weight: 800; margin-top: 4px">هزینه‌های بانک (جدا از ما)</span>
+      <div style="display: flex; flex-direction: column; gap: 6px; font-size: 15px">
+        <div style="display: flex; justify-content: space-between; gap: 10px"><span>بررسی خوش‌حسابی (مرآت)</span><span style="font-weight: 700; color: #57534E">طبق سامانه مرآت</span></div>
+        <div style="display: flex; justify-content: space-between; gap: 10px"><span>تعهدنامه دیجیتال (سفته الکترونیک)</span><span style="font-weight: 700; color: #57534E">طبق سامانه</span></div>
+        <div style="display: flex; justify-content: space-between; gap: 10px"><span>کارمزد وام</span><span style="font-weight: 800">۴٪</span></div>
+      </div>
+    </section>
+
+    <label style="min-height: 76px; border-radius: 20px; border: 2.5px solid {{chkB}}; background: {{chkBg}}; display: flex; align-items: center; gap: 14px; padding: 12px 16px; cursor: pointer">
+      <input type="checkbox" checked="{{agreed}}" onChange="{{toggleAgree}}" style="width: 32px; height: 32px; flex: none; accent-color: #0F5E5A; cursor: pointer; margin: 0">
+      <span style="font-size: 18px; font-weight: 800; line-height: 1.6">خواندم و قبول دارم</span>
+    </label>
+  </main>
+
+  <footer style="padding: 12px 20px 18px; border-top: 1px solid #EADFCF; background: #FBF7F0; display: flex; flex-direction: column; gap: 10px">
+    <sc-if value="{{agreed}}" hint-placeholder-val="{{false}}">
+      <a href="Booking.dc.html" style="width: 100%; height: 60px; border-radius: 16px; background: #0F5E5A; color: #FFFFFF; display: flex; align-items: center; justify-content: center; gap: 10px; font-size: 19px; font-weight: 800; text-decoration: none; box-shadow: 0 8px 18px rgba(15,94,90,0.22)">
+        تأیید و ادامه
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M19 12H5"/><path d="m11 6-6 6 6 6"/></svg>
+      </a>
+    </sc-if>
+    <sc-if value="{{notAgreed}}" hint-placeholder-val="{{true}}">
+      <button type="button" disabled="{{true}}" style="width: 100%; height: 60px; border-radius: 16px; border: none; background: #DCD3C4; color: #57534E; display: flex; align-items: center; justify-content: center; gap: 10px; font-size: 18px; font-weight: 800">
+        اول تیک «قبول دارم» را بزنید
+      </button>
+    </sc-if>
+    <button type="button" style="width: 100%; height: 52px; border-radius: 14px; border: 1.5px solid #0F5E5A; background: #FFFFFF; color: #0F5E5A; display: flex; align-items: center; justify-content: center; gap: 10px; font-size: 17px; font-weight: 800; cursor: pointer">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2z"/></svg>
+      تماس با کارشناس
+    </button>
+  </footer>
+</div>
+</template>
+<script src="assets/morphdom.min.js"></script>
+<script src="assets/hv-runtime.js"></script>
+<script>
+class Component extends DCLogic {
+  renderVals() {
+    const s = this.state || {};
+    const agreed = !!s.agreed;
+    const playing = !!s.playing;
+    return {
+      agreed: agreed,
+      notAgreed: !agreed,
+      chkB: agreed ? '#0F5E5A' : '#D9CDB8',
+      chkBg: agreed ? '#F4FAF8' : '#FFFFFF',
+      toggleAgree: () => this.setState({ agreed: !agreed }),
+      playing: playing,
+      notPlaying: !playing,
+      playLabel: playing ? 'در حال خواندن…' : 'گوش دادن به رضایت‌نامه',
+      waveCls: playing ? 'hv-wave' : '',
+      togglePlay: () => this.setState({ playing: !playing })
+    };
+  }
+}
+HV.mount(Component, {});
+</script>
+</body>
+</html>

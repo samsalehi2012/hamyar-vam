@@ -1,0 +1,159 @@
+<!doctype html>
+<html lang="fa" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="robots" content="noindex, nofollow">
+<meta name="theme-color" content="#0F5E5A">
+<title>همیار وام · نوع وام</title>
+<link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="assets/site.css">
+<style>
+body{margin:0;background:#FBF7F0}
+*{box-sizing:border-box}
+button,input{font-family:inherit}
+a{color:#0F5E5A}a:hover{color:#0B4744}
+</style>
+</head>
+<body class="hv-mobile">
+<div id="hv-app"></div>
+<template id="hv-tpl">
+<div class="hv-root" dir="rtl" style="width: 390px; height: 1000px; display: flex; flex-direction: column; background: #FBF7F0; color: #1F2328; font-family: 'Vazirmatn', Tahoma, sans-serif; font-size: 18px; line-height: 1.8; overflow: hidden">
+
+  <header style="display: flex; align-items: center; justify-content: space-between; gap: 12px; padding: 18px 20px 6px">
+    <a href="Login.dc.html" aria-label="بازگشت" style="width: 48px; height: 48px; border-radius: 14px; background: #FFFFFF; border: 1px solid #E8DDCB; display: flex; align-items: center; justify-content: center; color: #1F2328">
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"/><path d="m13 6 6 6-6 6"/></svg>
+    </a>
+    <button type="button" style="height: 48px; padding: 0 16px; border-radius: 999px; border: none; background: #E2EEEB; color: #0B4744; display: flex; align-items: center; gap: 8px; font-size: 16px; font-weight: 700; cursor: pointer">
+      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M11 5 6 9H3v6h3l5 4z"/><path d="M15.5 8.5a5 5 0 0 1 0 7"/><path d="M18.5 5.5a9 9 0 0 1 0 13"/></svg>
+      برایم بخوان
+    </button>
+  </header>
+
+  <div style="padding: 8px 20px 0; display: flex; flex-direction: column; gap: 8px">
+    <div style="display: flex; justify-content: space-between; align-items: center; font-size: 15px; color: #57534E">
+      <span style="font-weight: 800; color: #0B4744">مرحله ۱ از ۵</span>
+      <span style="display: flex; align-items: center; gap: 6px"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#2E7D32" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="m8.5 12 2.5 2.5 4.5-5"/></svg>خودکار ذخیره می‌شود</span>
+    </div>
+    <div style="display: grid; grid-template-columns: repeat(5, minmax(0, 1fr)); gap: 6px">
+      <span style="height: 8px; border-radius: 99px; background: #0F5E5A"></span>
+      <span style="height: 8px; border-radius: 99px; background: #E6DCCB"></span>
+      <span style="height: 8px; border-radius: 99px; background: #E6DCCB"></span>
+      <span style="height: 8px; border-radius: 99px; background: #E6DCCB"></span>
+      <span style="height: 8px; border-radius: 99px; background: #E6DCCB"></span>
+    </div>
+  </div>
+
+  <main style="flex: 1; display: flex; flex-direction: column; gap: 16px; padding: 20px 20px 16px; min-height: 0">
+    <div style="display: flex; flex-direction: column; gap: 2px">
+      <h1 style="margin: 0; font-size: 27px; line-height: 1.5; font-weight: 900">برای چه کاری وام می‌خواهید؟</h1>
+      <p style="margin: 0; color: #57534E">یکی را انتخاب کنید.</p>
+    </div>
+
+    <div style="display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 12px">
+      <button type="button" onClick="{{pickLife}}" aria-pressed="{{selLife}}" style="position: relative; min-height: 172px; border-radius: 22px; border: 2.5px solid {{bLife}}; background: {{bgLife}}; padding: 16px 14px; display: flex; flex-direction: column; align-items: flex-start; gap: 10px; text-align: right; cursor: pointer; color: #1F2328">
+        <span style="width: 56px; height: 64px; border-radius: 28px 28px 12px 12px; background: #E2EEEB; color: #0F5E5A; display: flex; align-items: center; justify-content: center">
+          <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 11 12 4l9 7"/><path d="M5 10v10h14V10"/><path d="M10 20v-6h4v6"/></svg>
+        </span>
+        <span style="font-size: 18px; font-weight: 800; line-height: 1.5">خرج زندگی و کار شخصی</span>
+        <span style="font-size: 14px; font-weight: 600; color: #57534E; line-height: 1.5">تا ۵۰۰ میلیون تومان</span>
+        <sc-if value="{{selLife}}" hint-placeholder-val="{{true}}">
+          <span style="position: absolute; top: 12px; left: 12px; width: 30px; height: 30px; border-radius: 50%; background: #0F5E5A; color: #FFFFFF; display: flex; align-items: center; justify-content: center"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12.5 4.5 4.5L19 7.5"/></svg></span>
+        </sc-if>
+      </button>
+
+      <button type="button" onClick="{{pickMarriage}}" aria-pressed="{{selMarriage}}" style="position: relative; min-height: 172px; border-radius: 22px; border: 2.5px solid {{bMarriage}}; background: {{bgMarriage}}; padding: 16px 14px; display: flex; flex-direction: column; align-items: flex-start; gap: 10px; text-align: right; cursor: pointer; color: #1F2328">
+        <span style="width: 56px; height: 64px; border-radius: 28px 28px 12px 12px; background: #F8E3DD; color: #9A3B26; display: flex; align-items: center; justify-content: center">
+          <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="9" cy="14.5" r="5"/><circle cx="15" cy="14.5" r="5"/><path d="m12 3 2 2.5-2 2.5-2-2.5z"/></svg>
+        </span>
+        <span style="font-size: 18px; font-weight: 800; line-height: 1.5">ازدواج</span>
+        <span style="font-size: 14px; font-weight: 600; color: #57534E; line-height: 1.5">۳۰۰ میلیون برای هر نفر</span>
+        <sc-if value="{{selMarriage}}" hint-placeholder-val="{{false}}">
+          <span style="position: absolute; top: 12px; left: 12px; width: 30px; height: 30px; border-radius: 50%; background: #0F5E5A; color: #FFFFFF; display: flex; align-items: center; justify-content: center"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12.5 4.5 4.5L19 7.5"/></svg></span>
+        </sc-if>
+      </button>
+
+      <button type="button" onClick="{{pickChild}}" aria-pressed="{{selChild}}" style="position: relative; min-height: 172px; border-radius: 22px; border: 2.5px solid {{bChild}}; background: {{bgChild}}; padding: 16px 14px; display: flex; flex-direction: column; align-items: flex-start; gap: 10px; text-align: right; cursor: pointer; color: #1F2328">
+        <span style="width: 56px; height: 64px; border-radius: 28px 28px 12px 12px; background: #E3ECF7; color: #1E4E8C; display: flex; align-items: center; justify-content: center">
+          <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2.5 5h2l1.2 3"/><path d="M5.7 8H20a6 6 0 0 1-6 6H9.5a3.8 3.8 0 0 1-3.8-3.8z"/><path d="M13 8V3a6 6 0 0 1 7 5"/><circle cx="8" cy="19" r="2"/><circle cx="17" cy="19" r="2"/></svg>
+        </span>
+        <span style="font-size: 18px; font-weight: 800; line-height: 1.5">تولد فرزند</span>
+        <span style="font-size: 14px; font-weight: 600; color: #57534E; line-height: 1.5">۴۴ تا ۲۲۰ میلیون تومان</span>
+        <sc-if value="{{selChild}}" hint-placeholder-val="{{false}}">
+          <span style="position: absolute; top: 12px; left: 12px; width: 30px; height: 30px; border-radius: 50%; background: #0F5E5A; color: #FFFFFF; display: flex; align-items: center; justify-content: center"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12.5 4.5 4.5L19 7.5"/></svg></span>
+        </sc-if>
+      </button>
+
+      <button type="button" onClick="{{pickBiz}}" aria-pressed="{{selBiz}}" style="position: relative; min-height: 172px; border-radius: 22px; border: 2.5px solid {{bBiz}}; background: {{bgBiz}}; padding: 16px 14px; display: flex; flex-direction: column; align-items: flex-start; gap: 10px; text-align: right; cursor: pointer; color: #1F2328">
+        <span style="width: 56px; height: 64px; border-radius: 28px 28px 12px 12px; background: #FCEFD9; color: #92400E; display: flex; align-items: center; justify-content: center">
+          <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 10v10h16V10"/><path d="M3 10 5 4h14l2 6"/><path d="M3 10a3 3 0 0 0 6 0 3 3 0 0 0 6 0 3 3 0 0 0 6 0"/><path d="M10 20v-5h4v5"/></svg>
+        </span>
+        <span style="font-size: 18px; font-weight: 800; line-height: 1.5">کسب‌وکار و مغازه</span>
+        <span style="font-size: 14px; font-weight: 600; color: #57534E; line-height: 1.5">تا ۱ میلیارد تومان</span>
+        <sc-if value="{{selBiz}}" hint-placeholder-val="{{false}}">
+          <span style="position: absolute; top: 12px; left: 12px; width: 30px; height: 30px; border-radius: 50%; background: #0F5E5A; color: #FFFFFF; display: flex; align-items: center; justify-content: center"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12.5 4.5 4.5L19 7.5"/></svg></span>
+        </sc-if>
+      </button>
+    </div>
+
+    <button type="button" onClick="{{pickEmdad}}" aria-pressed="{{selEmdad}}" style="position: relative; min-height: 88px; border-radius: 22px; border: 2.5px solid {{bEmdad}}; background: {{bgEmdad}}; padding: 12px 14px; display: flex; align-items: center; gap: 14px; text-align: right; cursor: pointer; color: #1F2328">
+      <span style="width: 52px; height: 60px; flex: none; border-radius: 26px 26px 12px 12px; background: #ECE8F6; color: #4B3A8C; display: flex; align-items: center; justify-content: center">
+        <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 5h14a1 1 0 0 1 1 1v11a1 1 0 0 1-1 1H9l-5 4V6a1 1 0 0 1 1-1z"/><path d="M8 10h8M8 13.5h5"/></svg>
+      </span>
+      <span style="flex: 1; display: flex; flex-direction: column; line-height: 1.5">
+        <span style="font-size: 18px; font-weight: 800">پیامک معرفی امداد ولایت دارم</span>
+        <span style="font-size: 14px; font-weight: 600; color: #57534E">تا ۴۰۰ میلیون تومان، بدون کارمزد</span>
+      </span>
+      <sc-if value="{{selEmdad}}" hint-placeholder-val="{{false}}">
+        <span style="width: 30px; height: 30px; flex: none; border-radius: 50%; background: #0F5E5A; color: #FFFFFF; display: flex; align-items: center; justify-content: center"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12.5 4.5 4.5L19 7.5"/></svg></span>
+      </sc-if>
+    </button>
+
+    <button type="button" onClick="{{pickUnsure}}" aria-pressed="{{selUnsure}}" style="position: relative; min-height: 80px; border-radius: 22px; border: 2.5px dashed {{bUnsure}}; background: {{bgUnsure}}; padding: 12px 14px; display: flex; align-items: center; gap: 14px; text-align: right; cursor: pointer; color: #1F2328">
+      <span style="width: 52px; height: 52px; flex: none; border-radius: 50%; background: #F3EBDD; color: #57534E; display: flex; align-items: center; justify-content: center">
+        <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M9.5 9.5a2.5 2.5 0 1 1 3.5 2.3c-.6.3-1 .8-1 1.5v.7"/><path d="M12 17h.01"/></svg>
+      </span>
+      <span style="flex: 1; display: flex; flex-direction: column; line-height: 1.5">
+        <span style="font-size: 18px; font-weight: 800">نمی‌دانم، کمکم کنید</span>
+        <span style="font-size: 14px; font-weight: 600; color: #57534E">با چند پرسش، با هم پیدا می‌کنیم</span>
+      </span>
+    </button>
+  </main>
+
+  <footer style="padding: 12px 20px 18px; border-top: 1px solid #EADFCF; background: #FBF7F0; display: flex; flex-direction: column; gap: 10px">
+    <a href="Questions.dc.html" style="width: 100%; height: 60px; border-radius: 16px; background: #0F5E5A; color: #FFFFFF; display: flex; align-items: center; justify-content: center; gap: 10px; font-size: 19px; font-weight: 800; text-decoration: none; box-shadow: 0 8px 18px rgba(15,94,90,0.22)">
+      ادامه
+      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M19 12H5"/><path d="m11 6-6 6 6 6"/></svg>
+    </a>
+    <div style="display: flex; gap: 10px">
+      <a href="Main.dc.html" style="flex: 1; height: 52px; border-radius: 14px; background: #F3EBDD; color: #1F2328; display: flex; align-items: center; justify-content: center; font-size: 16px; font-weight: 700; text-decoration: none">بعداً ادامه می‌دهم</a>
+      <button type="button" style="flex: 1; height: 52px; border-radius: 14px; border: 1.5px solid #0F5E5A; background: #FFFFFF; color: #0F5E5A; display: flex; align-items: center; justify-content: center; gap: 8px; font-size: 16px; font-weight: 800; cursor: pointer">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2z"/></svg>
+        تماس با کارشناس
+      </button>
+    </div>
+  </footer>
+</div>
+</template>
+<script src="assets/morphdom.min.js"></script>
+<script src="assets/hv-runtime.js"></script>
+<script>
+class Component extends DCLogic {
+  renderVals() {
+    const sel = (this.state && this.state.sel) || 'life';
+    const ids = { Life: 'life', Marriage: 'marriage', Child: 'child', Biz: 'biz', Emdad: 'emdad', Unsure: 'unsure' };
+    const out = {};
+    Object.keys(ids).forEach((k) => {
+      const on = sel === ids[k];
+      out['sel' + k] = on;
+      out['b' + k] = on ? '#0F5E5A' : (k === 'Unsure' ? '#D9CDB8' : '#EADFCF');
+      out['bg' + k] = on ? '#F4FAF8' : '#FFFFFF';
+      out['pick' + k] = () => this.setState({ sel: ids[k] });
+    });
+    return out;
+  }
+}
+HV.mount(Component, {});
+</script>
+</body>
+</html>

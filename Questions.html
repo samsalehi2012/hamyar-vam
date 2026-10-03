@@ -1,0 +1,229 @@
+<!doctype html>
+<html lang="fa" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="robots" content="noindex, nofollow">
+<meta name="theme-color" content="#0F5E5A">
+<title>همیار وام · پرسش‌ها</title>
+<link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="assets/site.css">
+<style>
+body{margin:0;background:#FBF7F0}
+*{box-sizing:border-box}
+button,input{font-family:inherit}
+a{color:#0F5E5A}a:hover{color:#0B4744}
+@keyframes hvIn{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:none}}
+.hv-q{animation:hvIn .35s ease-out}
+</style>
+</head>
+<body class="hv-mobile">
+<div id="hv-app"></div>
+<template id="hv-tpl">
+<div class="hv-root" dir="rtl" style="width: 390px; height: 900px; display: flex; flex-direction: column; background: #FBF7F0; color: #1F2328; font-family: 'Vazirmatn', Tahoma, sans-serif; font-size: 18px; line-height: 1.8; overflow: hidden">
+
+  <header style="display: flex; align-items: center; justify-content: space-between; gap: 12px; padding: 18px 20px 6px">
+    <sc-if value="{{isFirst}}" hint-placeholder-val="{{true}}">
+      <a href="Purpose.dc.html" aria-label="بازگشت" style="width: 48px; height: 48px; border-radius: 14px; background: #FFFFFF; border: 1px solid #E8DDCB; display: flex; align-items: center; justify-content: center; color: #1F2328">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"/><path d="m13 6 6 6-6 6"/></svg>
+      </a>
+    </sc-if>
+    <sc-if value="{{notFirst}}" hint-placeholder-val="{{false}}">
+      <button type="button" onClick="{{prev}}" aria-label="پرسش قبلی" style="width: 48px; height: 48px; border-radius: 14px; background: #FFFFFF; border: 1px solid #E8DDCB; display: flex; align-items: center; justify-content: center; color: #1F2328; cursor: pointer">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"/><path d="m13 6 6 6-6 6"/></svg>
+      </button>
+    </sc-if>
+    <button type="button" style="height: 48px; padding: 0 16px; border-radius: 999px; border: none; background: #E2EEEB; color: #0B4744; display: flex; align-items: center; gap: 8px; font-size: 16px; font-weight: 700; cursor: pointer">
+      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M11 5 6 9H3v6h3l5 4z"/><path d="M15.5 8.5a5 5 0 0 1 0 7"/><path d="M18.5 5.5a9 9 0 0 1 0 13"/></svg>
+      برایم بخوان
+    </button>
+  </header>
+
+  <div style="padding: 8px 20px 0; display: flex; flex-direction: column; gap: 8px">
+    <div style="display: flex; justify-content: space-between; align-items: center; font-size: 15px; color: #57534E">
+      <span style="font-weight: 800; color: #0B4744">مرحله ۲ از ۵ · چند پرسش ساده</span>
+      <span style="display: flex; align-items: center; gap: 6px"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#2E7D32" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="m8.5 12 2.5 2.5 4.5-5"/></svg>ذخیره شد</span>
+    </div>
+    <div style="display: grid; grid-template-columns: repeat(5, minmax(0, 1fr)); gap: 6px">
+      <span style="height: 8px; border-radius: 99px; background: #0F5E5A"></span>
+      <span style="height: 8px; border-radius: 99px; background: #0F5E5A"></span>
+      <span style="height: 8px; border-radius: 99px; background: #E6DCCB"></span>
+      <span style="height: 8px; border-radius: 99px; background: #E6DCCB"></span>
+      <span style="height: 8px; border-radius: 99px; background: #E6DCCB"></span>
+    </div>
+  </div>
+
+  <main style="flex: 1; display: flex; flex-direction: column; gap: 18px; padding: 22px 20px 16px; min-height: 0">
+    <div style="display: flex; align-items: center; gap: 10px">
+      <span style="font-size: 15px; font-weight: 800; color: #0F5E5A; background: #E2EEEB; border-radius: 999px; padding: 2px 14px">پرسش {{counter}} از ۵</span>
+      <div style="display: flex; gap: 6px">
+        <sc-for list="{{dots}}" as="d" hint-placeholder-count="5">
+          <span style="width: 10px; height: 10px; border-radius: 50%; background: {{d.bg}}"></span>
+        </sc-for>
+      </div>
+    </div>
+
+    <sc-if value="{{q0}}" hint-placeholder-val="{{true}}">
+      <section class="hv-q" style="display: flex; flex-direction: column; gap: 18px">
+        <span style="width: 64px; height: 74px; border-radius: 32px 32px 14px 14px; background: #0F5E5A; color: #F3D27E; display: flex; align-items: center; justify-content: center">
+          <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 10 12 4l9 6"/><path d="M5 10v8M9.5 10v8M14.5 10v8M19 10v8"/><path d="M3 21h18"/></svg>
+        </span>
+        <h1 style="margin: 0; font-size: 28px; line-height: 1.55; font-weight: 900">در بانک رسالت حساب دارید؟</h1>
+        <p style="margin: 0; color: #57534E">منظور حساب قرض‌الحسنه است. اگر ندارید، اشکالی ندارد؛ با هم باز می‌کنیم.</p>
+      </section>
+    </sc-if>
+
+    <sc-if value="{{q1}}" hint-placeholder-val="{{false}}">
+      <section class="hv-q" style="display: flex; flex-direction: column; gap: 18px">
+        <span style="width: 64px; height: 74px; border-radius: 32px 32px 14px 14px; background: #0F5E5A; color: #F3D27E; display: flex; align-items: center; justify-content: center">
+          <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="6" y="2.5" width="12" height="19" rx="2.5"/><path d="M10.5 18.5h3"/></svg>
+        </span>
+        <h1 style="margin: 0; font-size: 28px; line-height: 1.55; font-weight: 900">سیم‌کارتی که با آن تماس می‌گیرید به نام خودتان است؟</h1>
+        <p style="margin: 0; color: #57534E">بانک شماره موبایل را با کد ملی شما تطبیق می‌دهد. اگر به نام فرزندتان است، راهنمایی‌تان می‌کنیم.</p>
+      </section>
+    </sc-if>
+
+    <sc-if value="{{q2}}" hint-placeholder-val="{{false}}">
+      <section class="hv-q" style="display: flex; flex-direction: column; gap: 18px">
+        <span style="width: 64px; height: 74px; border-radius: 32px 32px 14px 14px; background: #0F5E5A; color: #F3D27E; display: flex; align-items: center; justify-content: center">
+          <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 3h12v18l-3-2-3 2-3-2-3 2z"/><path d="M9 8h6M9 12h6M9 16h3"/></svg>
+        </span>
+        <h1 style="margin: 0; font-size: 28px; line-height: 1.55; font-weight: 900">چک برگشتی یا قسط عقب‌افتاده دارید؟</h1>
+        <p style="margin: 0; color: #57534E">در هر بانکی. جواب درست کمک می‌کند راه درست را نشانتان بدهیم.</p>
+      </section>
+    </sc-if>
+
+    <sc-if value="{{showYesNo}}" hint-placeholder-val="{{true}}">
+      <div style="display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 12px; margin-top: 6px">
+        <button type="button" onClick="{{yes}}" style="height: 128px; border-radius: 24px; border: 2.5px solid #0F5E5A; background: #F4FAF8; color: #0B4744; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 8px; font-size: 24px; font-weight: 900; cursor: pointer">
+          <span style="width: 48px; height: 48px; border-radius: 50%; background: #0F5E5A; color: #FFFFFF; display: flex; align-items: center; justify-content: center"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12.5 4.5 4.5L19 7.5"/></svg></span>
+          بله
+        </button>
+        <button type="button" onClick="{{no}}" style="height: 128px; border-radius: 24px; border: 2.5px solid #D9CDB8; background: #FFFFFF; color: #1F2328; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 8px; font-size: 24px; font-weight: 900; cursor: pointer">
+          <span style="width: 48px; height: 48px; border-radius: 50%; background: #57534E; color: #FFFFFF; display: flex; align-items: center; justify-content: center"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 6l12 12M18 6 6 18"/></svg></span>
+          نه
+        </button>
+      </div>
+    </sc-if>
+
+    <sc-if value="{{q3}}" hint-placeholder-val="{{false}}">
+      <section class="hv-q" style="display: flex; flex-direction: column; gap: 14px">
+        <h1 style="margin: 0; font-size: 28px; line-height: 1.55; font-weight: 900">شغل شما چیست؟</h1>
+        <p style="margin: 0; color: #57534E">بر اساس شغل، فهرست مدارک را برایتان آماده می‌کنیم.</p>
+        <div style="display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 10px">
+          <sc-for list="{{jobs}}" as="j" hint-placeholder-count="7">
+            <button type="button" onClick="{{j.pick}}" style="min-height: 60px; border-radius: 16px; border: 2px solid {{j.border}}; background: {{j.bg}}; color: #1F2328; font-size: 17px; font-weight: 700; display: flex; align-items: center; gap: 10px; padding: 0 14px; text-align: right; cursor: pointer">
+              <span style="width: 20px; height: 20px; flex: none; border-radius: 50%; border: 2.5px solid {{j.border}}; background: {{j.dot}}"></span>
+              {{j.label}}
+            </button>
+          </sc-for>
+        </div>
+      </section>
+    </sc-if>
+
+    <sc-if value="{{q4}}" hint-placeholder-val="{{false}}">
+      <section class="hv-q" style="display: flex; flex-direction: column; gap: 14px">
+        <h1 style="margin: 0; font-size: 25px; line-height: 1.6; font-weight: 900">پول را خودتان در حساب می‌گذارید یا از امتیاز یکی از اعضای خانواده؟</h1>
+        <button type="button" onClick="{{pickSelf}}" style="min-height: 72px; border-radius: 18px; border: 2.5px solid {{selfB}}; background: {{selfBg}}; display: flex; align-items: center; gap: 12px; padding: 10px 14px; font-size: 18px; font-weight: 800; color: #1F2328; text-align: right; cursor: pointer">
+          <span style="width: 44px; height: 44px; flex: none; border-radius: 14px; background: #FCEFD9; color: #92400E; display: flex; align-items: center; justify-content: center"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><ellipse cx="12" cy="6" rx="7" ry="3"/><path d="M5 6v6c0 1.7 3.1 3 7 3s7-1.3 7-3V6"/><path d="M5 12v6c0 1.7 3.1 3 7 3s7-1.3 7-3v-6"/></svg></span>
+          خودم پول را در حساب می‌گذارم
+        </button>
+        <button type="button" onClick="{{pickFamily}}" style="min-height: 72px; border-radius: 18px; border: 2.5px solid {{famB}}; background: {{famBg}}; display: flex; align-items: center; gap: 12px; padding: 10px 14px; font-size: 18px; font-weight: 800; color: #1F2328; text-align: right; cursor: pointer">
+          <span style="width: 44px; height: 44px; flex: none; border-radius: 14px; background: #E2EEEB; color: #0F5E5A; display: flex; align-items: center; justify-content: center"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="9" cy="8" r="3.5"/><path d="M2.5 20a6.5 6.5 0 0 1 13 0"/><path d="M16 4.5a3.5 3.5 0 0 1 0 7"/><path d="M18 14a6.5 6.5 0 0 1 3.5 6"/></svg></span>
+          از امتیاز یکی از اعضای خانواده
+        </button>
+        <sc-if value="{{isFamily}}" hint-placeholder-val="{{true}}">
+          <div style="display: flex; flex-direction: column; gap: 10px">
+            <span style="font-size: 17px; font-weight: 800">چه نسبتی با شما دارد؟</span>
+            <div style="display: flex; flex-wrap: wrap; gap: 8px">
+              <sc-for list="{{rels}}" as="r" hint-placeholder-count="7">
+                <button type="button" onClick="{{r.pick}}" style="min-height: 46px; border-radius: 999px; border: 2px solid {{r.border}}; background: {{r.bg}}; color: {{r.color}}; font-size: 16px; font-weight: 700; padding: 0 16px; cursor: pointer">{{r.label}}</button>
+              </sc-for>
+            </div>
+            <sc-if value="{{isOther}}" hint-placeholder-val="{{false}}">
+              <div style="border-radius: 16px; background: #FCEFD9; color: #92400E; padding: 12px 14px; display: flex; gap: 10px; font-size: 15px; font-weight: 600; line-height: 1.7">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="flex: none; margin-top: 3px"><path d="M12 3 2 20h20z"/><path d="M12 10v4M12 17h.01"/></svg>
+                انتقال امتیاز به غیر بستگان، سالانه حداکثر ۱ میلیارد تومان است.
+              </div>
+            </sc-if>
+          </div>
+        </sc-if>
+      </section>
+    </sc-if>
+  </main>
+
+  <footer style="padding: 12px 20px 18px; border-top: 1px solid #EADFCF; background: #FBF7F0; display: flex; flex-direction: column; gap: 10px">
+    <sc-if value="{{q4}}" hint-placeholder-val="{{false}}">
+      <a href="Result.dc.html" style="width: 100%; height: 60px; border-radius: 16px; background: #0F5E5A; color: #FFFFFF; display: flex; align-items: center; justify-content: center; gap: 10px; font-size: 19px; font-weight: 800; text-decoration: none; box-shadow: 0 8px 18px rgba(15,94,90,0.22)">
+        دیدن نتیجه
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M19 12H5"/><path d="m11 6-6 6 6 6"/></svg>
+      </a>
+    </sc-if>
+    <div style="display: flex; gap: 10px">
+      <a href="Main.dc.html" style="flex: 1; height: 52px; border-radius: 14px; background: #F3EBDD; color: #1F2328; display: flex; align-items: center; justify-content: center; font-size: 16px; font-weight: 700; text-decoration: none">بعداً ادامه می‌دهم</a>
+      <button type="button" style="flex: 1; height: 52px; border-radius: 14px; border: 1.5px solid #0F5E5A; background: #FFFFFF; color: #0F5E5A; display: flex; align-items: center; justify-content: center; gap: 8px; font-size: 16px; font-weight: 800; cursor: pointer">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2z"/></svg>
+        تماس با کارشناس
+      </button>
+    </div>
+  </footer>
+</div>
+</template>
+<script src="assets/morphdom.min.js"></script>
+<script src="assets/hv-runtime.js"></script>
+<script>
+class Component extends DCLogic {
+  renderVals() {
+    const s = this.state || {};
+    const q = typeof s.q === 'number' ? s.q : 0;
+    const fa = ['۱', '۲', '۳', '۴', '۵'];
+    const job = s.job || 'retired';
+    const source = s.source || 'family';
+    const rel = s.rel || 'child';
+    const go = (n, extra) => this.setState(Object.assign({ q: Math.max(0, Math.min(4, n)) }, extra || {}));
+    const jobList = [
+      ['gov', 'کارمند دولت'], ['company', 'کارمند شرکت'], ['retired', 'بازنشسته'], ['shop', 'کاسب با جواز'],
+      ['worker', 'کارگر'], ['home', 'خانه‌دار'], ['none', 'بدون شغل']
+    ];
+    const relList = [
+      ['spouse', 'همسر'], ['parent', 'پدر یا مادر'], ['child', 'فرزند'], ['grand', 'نوه'],
+      ['sibling', 'خواهر یا برادر'], ['inlaw', 'پدر یا مادر همسر'], ['other', 'کس دیگر']
+    ];
+    return {
+      q0: q === 0, q1: q === 1, q2: q === 2, q3: q === 3, q4: q === 4,
+      showYesNo: q < 3,
+      isFirst: q === 0, notFirst: q > 0,
+      counter: fa[q],
+      dots: [0, 1, 2, 3, 4].map((i) => ({ bg: i <= q ? '#0F5E5A' : '#E6DCCB' })),
+      yes: () => go(q + 1, { ['a' + q]: 'yes' }),
+      no: () => go(q + 1, { ['a' + q]: 'no' }),
+      prev: () => go(q - 1),
+      jobs: jobList.map(([id, label]) => ({
+        label,
+        border: job === id ? '#0F5E5A' : '#E2D8C6',
+        bg: job === id ? '#F4FAF8' : '#FFFFFF',
+        dot: job === id ? '#0F5E5A' : '#FFFFFF',
+        pick: () => go(4, { job: id })
+      })),
+      pickSelf: () => this.setState({ source: 'self' }),
+      pickFamily: () => this.setState({ source: 'family' }),
+      selfB: source === 'self' ? '#0F5E5A' : '#E2D8C6',
+      selfBg: source === 'self' ? '#F4FAF8' : '#FFFFFF',
+      famB: source === 'family' ? '#0F5E5A' : '#E2D8C6',
+      famBg: source === 'family' ? '#F4FAF8' : '#FFFFFF',
+      isFamily: source === 'family',
+      isOther: source === 'family' && rel === 'other',
+      rels: relList.map(([id, label]) => ({
+        label,
+        border: rel === id ? '#0F5E5A' : '#E2D8C6',
+        bg: rel === id ? '#0F5E5A' : '#FFFFFF',
+        color: rel === id ? '#FFFFFF' : '#1F2328',
+        pick: () => this.setState({ rel: id })
+      }))
+    };
+  }
+}
+HV.mount(Component, {});
+</script>
+</body>
+</html>

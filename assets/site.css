@@ -1,0 +1,79 @@
+@font-face {
+  font-family: 'Vazirmatn';
+  src: url('fonts/Vazirmatn-Variable.woff2') format('woff2');
+  font-weight: 100 900;
+  font-style: normal;
+  font-display: swap;
+}
+
+html { -webkit-text-size-adjust: 100%; }
+body { margin: 0; }
+
+/* ——— صفحه‌های موبایل متقاضی ——— */
+body.hv-mobile { background: #E9E2D6; }
+body.hv-mobile .hv-root {
+  width: 100% !important;
+  max-width: 440px;
+  height: auto !important;
+  min-height: 100vh;
+  min-height: 100dvh;
+  margin: 0 auto;
+  overflow: visible !important;
+}
+body.hv-mobile .hv-root > footer {
+  position: sticky;
+  bottom: 0;
+  z-index: 20;
+  padding-bottom: max(18px, env(safe-area-inset-bottom)) !important;
+}
+@media (min-width: 640px) {
+  body.hv-mobile {
+    background:
+      radial-gradient(circle at 20% 10%, rgba(15, 94, 90, 0.10), transparent 40%),
+      radial-gradient(circle at 80% 90%, rgba(233, 185, 73, 0.14), transparent 45%),
+      #E9E2D6;
+    padding: 28px 0;
+  }
+  body.hv-mobile .hv-root {
+    min-height: calc(100dvh - 56px);
+    border-radius: 34px;
+    box-shadow: 0 30px 70px rgba(40, 30, 10, 0.18), 0 0 0 1px rgba(40, 30, 10, 0.06);
+    overflow: clip !important;
+  }
+}
+
+/* ——— پنل کارشناس ——— */
+body.hv-desktop { background: #F6F1E8; }
+
+/* ——— برگه اجزا ——— */
+body.hv-sheet { background: #FBF7F0; overflow-x: auto; }
+body.hv-sheet .hv-root { height: auto !important; overflow: visible !important; margin: 0 auto; }
+
+/* ——— پیام کوتاه برای دکمه‌های نمایشی ——— */
+#hv-toast {
+  position: fixed;
+  left: 50%;
+  bottom: 110px;
+  transform: translate(-50%, 20px);
+  max-width: min(92vw, 400px);
+  background: #1F2328;
+  color: #FFFFFF;
+  font-family: 'Vazirmatn', Tahoma, sans-serif;
+  font-size: 16px;
+  font-weight: 700;
+  line-height: 1.7;
+  text-align: center;
+  padding: 12px 18px;
+  border-radius: 16px;
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.25);
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity .2s ease, transform .2s ease;
+  z-index: 1000;
+  direction: rtl;
+}
+#hv-toast.hv-toast-on { opacity: 1; transform: translate(-50%, 0); }
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { animation: none !important; transition: none !important; }
+}
