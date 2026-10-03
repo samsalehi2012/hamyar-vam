@@ -43,17 +43,33 @@ a{color:#0F5E5A}a:hover{color:#0B4744}
       </div>
     </div>
 
-    <section style="position: relative; overflow: hidden; border-radius: 26px; background: #0B4744; color: #FFFFFF; padding: 20px 18px 18px; display: flex; flex-direction: column; gap: 12px; box-shadow: 0 14px 30px rgba(11,71,68,0.25)">
-      <div aria-hidden="true" style="position: absolute; left: -30px; bottom: -40px; width: 150px; height: 190px; border-radius: 75px 75px 0 0; background: rgba(255,255,255,0.06)"></div>
-      <div aria-hidden="true" style="position: absolute; left: 34px; top: 20px; width: 34px; height: 34px; border-radius: 50%; background: #E9B949; opacity: 0.9"></div>
-      <span style="font-size: 15px; font-weight: 800; color: #F3D27E">الان چه کاری باید بکنم؟</span>
-      <p style="margin: 0; font-size: 22px; font-weight: 900; line-height: 1.6; padding-left: 60px">عکس صفحه اول شناسنامه‌تان را بفرستید.</p>
-      <p style="margin: 0; font-size: 15px; color: #CFE6E2; line-height: 1.7">بعد از آن، فرم بررسی خوش‌حسابی را برایتان آماده می‌کنیم.</p>
-      <a href="Upload.dc.html" style="height: 56px; border-radius: 16px; background: #FBF7F0; color: #0B4744; display: flex; align-items: center; justify-content: center; gap: 10px; font-size: 18px; font-weight: 900; text-decoration: none; position: relative">
-        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 8a2 2 0 0 1 2-2h2.5L9 4h6l1.5 2H19a2 2 0 0 1 2 2v10a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><circle cx="12" cy="13" r="3.5"/></svg>
-        فرستادن عکس
-      </a>
-    </section>
+    <sc-if value="{{notSent}}" hint-placeholder-val="{{true}}">
+      <section style="position: relative; overflow: hidden; border-radius: 26px; background: #0B4744; color: #FFFFFF; padding: 20px 18px 18px; display: flex; flex-direction: column; gap: 12px; box-shadow: 0 14px 30px rgba(11,71,68,0.25)">
+        <div aria-hidden="true" style="position: absolute; left: -30px; bottom: -40px; width: 150px; height: 190px; border-radius: 75px 75px 0 0; background: rgba(255,255,255,0.06)"></div>
+        <div aria-hidden="true" style="position: absolute; left: 34px; top: 20px; width: 34px; height: 34px; border-radius: 50%; background: #E9B949; opacity: 0.9"></div>
+        <span style="font-size: 15px; font-weight: 800; color: #F3D27E">الان چه کاری باید بکنم؟</span>
+        <p style="margin: 0; font-size: 22px; font-weight: 900; line-height: 1.6; padding-left: 60px">عکس صفحه اول شناسنامه‌تان را بفرستید.</p>
+        <p style="margin: 0; font-size: 15px; color: #CFE6E2; line-height: 1.7">بعد از آن، فرم بررسی خوش‌حسابی را برایتان آماده می‌کنیم.</p>
+        <a href="Upload.dc.html" style="height: 56px; border-radius: 16px; background: #FBF7F0; color: #0B4744; display: flex; align-items: center; justify-content: center; gap: 10px; font-size: 18px; font-weight: 900; text-decoration: none; position: relative">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 8a2 2 0 0 1 2-2h2.5L9 4h6l1.5 2H19a2 2 0 0 1 2 2v10a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><circle cx="12" cy="13" r="3.5"/></svg>
+          فرستادن عکس
+        </a>
+      </section>
+    </sc-if>
+    <sc-if value="{{sent}}" hint-placeholder-val="{{false}}">
+      <section style="position: relative; overflow: hidden; border-radius: 26px; background: #0B4744; color: #FFFFFF; padding: 20px 18px 18px; display: flex; flex-direction: column; gap: 12px; box-shadow: 0 14px 30px rgba(11,71,68,0.25)">
+        <div aria-hidden="true" style="position: absolute; left: -30px; bottom: -40px; width: 150px; height: 190px; border-radius: 75px 75px 0 0; background: rgba(255,255,255,0.06)"></div>
+        <div aria-hidden="true" style="position: absolute; left: 34px; top: 20px; width: 34px; height: 34px; border-radius: 50%; background: #E9B949; opacity: 0.9"></div>
+        <span style="align-self: flex-start; display: flex; align-items: center; gap: 6px; font-size: 14px; font-weight: 800; background: rgba(124,208,138,0.18); color: #BFF0C8; border-radius: 999px; padding: 2px 12px"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12.5 4.5 4.5L19 7.5"/></svg>شناسنامه شما رسید</span>
+        <span style="font-size: 15px; font-weight: 800; color: #F3D27E">الان چه کاری باید بکنم؟</span>
+        <p style="margin: 0; font-size: 22px; font-weight: 900; line-height: 1.6; padding-left: 60px">فقط یکشنبه ۱۲ مهر، ساعت ۱۰:۳۰ گوشی‌تان دم دست باشد.</p>
+        <p style="margin: 0; font-size: 15px; color: #CFE6E2; line-height: 1.7">برای جلسه همراهی تماس تصویری می‌گیریم. بقیه کارها با ماست.</p>
+        <a href="Messages.dc.html" style="height: 56px; border-radius: 16px; background: #FBF7F0; color: #0B4744; display: flex; align-items: center; justify-content: center; gap: 10px; font-size: 18px; font-weight: 900; text-decoration: none; position: relative">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 5h14a1 1 0 0 1 1 1v11a1 1 0 0 1-1 1H9l-5 4V6a1 1 0 0 1 1-1z"/><path d="M8 10h8M8 13.5h5"/></svg>
+          دیدن پیام‌ها
+        </a>
+      </section>
+    </sc-if>
 
     <a href="Messages.dc.html" style="min-height: 72px; border-radius: 20px; background: #FFFFFF; border: 1px solid #EADFCF; display: flex; align-items: center; gap: 12px; padding: 10px 14px; color: #1F2328; text-decoration: none">
       <span style="position: relative; width: 48px; height: 48px; flex: none; border-radius: 50%; background: #E9DCC5; color: #6B4E1F; font-weight: 900; display: flex; align-items: center; justify-content: center">س
@@ -71,15 +87,15 @@ a{color:#0F5E5A}a:hover{color:#0B4744}
     <ol style="list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column">
       <li style="display: flex; gap: 14px">
         <div style="display: flex; flex-direction: column; align-items: center; width: 44px; flex: none">
-          <span class="hv-pulse" style="width: 44px; height: 44px; border-radius: 50%; background: #B45309; color: #FFFFFF; display: flex; align-items: center; justify-content: center"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 3H6a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V9z"/><path d="M14 3v6h6"/></svg></span>
+          <span class="{{s1Cls}}" style="width: 44px; height: 44px; border-radius: 50%; background: {{s1Bg}}; color: #FFFFFF; display: flex; align-items: center; justify-content: center"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 3H6a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V9z"/><path d="M14 3v6h6"/></svg></span>
           <span style="flex: 1; width: 3px; min-height: 24px; background: #E6DCCB; border-radius: 9px"></span>
         </div>
         <div style="flex: 1; display: flex; flex-direction: column; gap: 4px; padding-bottom: 20px">
           <div style="display: flex; align-items: center; justify-content: space-between; gap: 8px">
             <span style="font-size: 18px; font-weight: 800">۱. مدارک</span>
-            <span style="display: flex; align-items: center; gap: 5px; font-size: 14px; font-weight: 800; background: #FCEFD9; color: #92400E; border-radius: 999px; padding: 2px 10px"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="8" r="4"/><path d="M4 21a8 8 0 0 1 16 0"/></svg>نوبت شما</span>
+            <span style="display: flex; align-items: center; gap: 5px; font-size: 14px; font-weight: 800; background: {{s1PillBg}}; color: {{s1PillInk}}; border-radius: 999px; padding: 2px 10px"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="8" r="4"/><path d="M4 21a8 8 0 0 1 16 0"/></svg>{{s1Pill}}</span>
           </div>
-          <span style="font-size: 15px; color: #57534E; line-height: 1.7">۴ از ۶ مدرک رسیده. شناسنامه شما و شناسنامه پسرتان مانده.</span>
+          <span style="font-size: 15px; color: #57534E; line-height: 1.7">{{s1Desc}}</span>
         </div>
       </li>
       <li style="display: flex; gap: 14px">
@@ -172,10 +188,22 @@ a{color:#0F5E5A}a:hover{color:#0B4744}
 <script>
 class Component extends DCLogic {
   renderVals() {
-    return {};
+    let stored = false;
+    try { stored = window.sessionStorage.getItem('hv_birth_sent') === '1'; } catch (e) {}
+    const sent = !!(this.props.sent ?? false) || stored;
+    return {
+      sent: sent,
+      notSent: !sent,
+      s1Cls: sent ? '' : 'hv-pulse',
+      s1Bg: sent ? '#0F5E5A' : '#B45309',
+      s1Pill: sent ? 'نوبت ما' : 'نوبت شما',
+      s1PillBg: sent ? '#E2EEEB' : '#FCEFD9',
+      s1PillInk: sent ? '#0B4744' : '#92400E',
+      s1Desc: sent ? '۵ از ۶ مدرک رسیده و در حال بررسی است. لینک عکس دوباره شناسنامه را برای پسرتان پیامک کردیم.' : '۴ از ۶ مدرک رسیده. شناسنامه شما و شناسنامه پسرتان مانده.'
+    };
   }
 }
-HV.mount(Component, {});
+HV.mount(Component, {"sent": {"editor": "boolean", "default": false, "section": "وضعیت پرونده"}});
 </script>
 </body>
 </html>

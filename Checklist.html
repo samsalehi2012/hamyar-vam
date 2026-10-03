@@ -65,11 +65,11 @@ a{color:#0F5E5A}a:hover{color:#0B4744}
         <span style="height: 10px; border-radius: 99px; background: #7CD08A"></span>
         <span style="height: 10px; border-radius: 99px; background: #7CD08A"></span>
         <span style="height: 10px; border-radius: 99px; background: #9FD3CB"></span>
-        <span style="height: 10px; border-radius: 99px; background: #F4B93A"></span>
-        <span style="height: 10px; border-radius: 99px; background: rgba(255,255,255,0.22)"></span>
+        <span style="height: 10px; border-radius: 99px; background: {{seg4}}"></span>
+        <span style="height: 10px; border-radius: 99px; background: {{seg5}}"></span>
         <span style="height: 10px; border-radius: 99px; background: rgba(255,255,255,0.22)"></span>
       </div>
-      <span style="font-size: 15px; color: #E3F1EE; font-weight: 600">۱ در حال بررسی · ۱ عکس دوباره · ۲ هنوز نفرستاده‌اید</span>
+      <span style="font-size: 15px; color: #E3F1EE; font-weight: 600">{{summary}}</span>
     </section>
 
     <h2 style="margin: 4px 0 0; font-size: 19px; font-weight: 900">مدارک خودتان</h2>
@@ -83,21 +83,33 @@ a{color:#0F5E5A}a:hover{color:#0B4744}
       </div>
     </article>
 
-    <article style="position: relative; border-radius: 20px; background: #FFFFFF; border: 2.5px solid #0F5E5A; padding: 14px; display: flex; flex-direction: column; gap: 12px; box-shadow: 0 10px 24px rgba(15,94,90,0.12)">
-      <span style="position: absolute; top: -13px; right: 16px; font-size: 13px; font-weight: 800; background: #0F5E5A; color: #FFFFFF; border-radius: 999px; padding: 0 12px">نوبت شما</span>
-      <div style="display: flex; gap: 12px; align-items: center">
+    <sc-if value="{{notSent}}" hint-placeholder-val="{{true}}">
+      <article style="position: relative; border-radius: 20px; background: #FFFFFF; border: 2.5px solid #0F5E5A; padding: 14px; display: flex; flex-direction: column; gap: 12px; box-shadow: 0 10px 24px rgba(15,94,90,0.12)">
+        <span style="position: absolute; top: -13px; right: 16px; font-size: 13px; font-weight: 800; background: #0F5E5A; color: #FFFFFF; border-radius: 999px; padding: 0 12px">نوبت شما</span>
+        <div style="display: flex; gap: 12px; align-items: center">
+          <span style="width: 54px; height: 62px; flex: none; border-radius: 27px 27px 12px 12px; background: #E2EEEB; color: #0F5E5A; display: flex; align-items: center; justify-content: center"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 4h11a3 3 0 0 1 3 3v13H8a3 3 0 0 1-3-3z"/><path d="M5 17a3 3 0 0 1 3-3h11"/><path d="M10 8h5"/></svg></span>
+          <div style="flex: 1; display: flex; flex-direction: column; gap: 4px; line-height: 1.5">
+            <span style="font-size: 17px; font-weight: 800">شناسنامه</span>
+            <span style="font-size: 14px; color: #57534E">صفحه اول؛ و صفحه توضیحات اگر چیزی در آن نوشته شده</span>
+            <span style="align-self: flex-start; display: flex; align-items: center; gap: 5px; font-size: 14px; font-weight: 800; background: #F1ECE4; color: #57534E; border-radius: 999px; padding: 2px 10px"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M8 12h8"/></svg>هنوز نفرستاده‌اید</span>
+          </div>
+        </div>
+        <a href="Upload.dc.html" style="height: 52px; border-radius: 14px; background: #0F5E5A; color: #FFFFFF; display: flex; align-items: center; justify-content: center; gap: 8px; font-size: 17px; font-weight: 800; text-decoration: none">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 8a2 2 0 0 1 2-2h2.5L9 4h6l1.5 2H19a2 2 0 0 1 2 2v10a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><circle cx="12" cy="13" r="3.5"/></svg>
+          عکس بگیرید و بفرستید
+        </a>
+      </article>
+    </sc-if>
+    <sc-if value="{{sent}}" hint-placeholder-val="{{false}}">
+      <article style="border-radius: 20px; background: #FFFFFF; border: 1px solid #EADFCF; padding: 14px; display: flex; gap: 12px; align-items: center">
         <span style="width: 54px; height: 62px; flex: none; border-radius: 27px 27px 12px 12px; background: #E2EEEB; color: #0F5E5A; display: flex; align-items: center; justify-content: center"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 4h11a3 3 0 0 1 3 3v13H8a3 3 0 0 1-3-3z"/><path d="M5 17a3 3 0 0 1 3-3h11"/><path d="M10 8h5"/></svg></span>
         <div style="flex: 1; display: flex; flex-direction: column; gap: 4px; line-height: 1.5">
           <span style="font-size: 17px; font-weight: 800">شناسنامه</span>
-          <span style="font-size: 14px; color: #57534E">صفحه اول؛ و صفحه توضیحات اگر چیزی در آن نوشته شده</span>
-          <span style="align-self: flex-start; display: flex; align-items: center; gap: 5px; font-size: 14px; font-weight: 800; background: #F1ECE4; color: #57534E; border-radius: 999px; padding: 2px 10px"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M8 12h8"/></svg>هنوز نفرستاده‌اید</span>
+          <span style="font-size: 14px; color: #57534E">صفحه اول؛ همین الان رسید</span>
+          <span style="align-self: flex-start; display: flex; align-items: center; gap: 5px; font-size: 14px; font-weight: 800; background: #E2EEEB; color: #0B4744; border-radius: 999px; padding: 2px 10px"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg>فرستاده شد · در حال بررسی</span>
         </div>
-      </div>
-      <a href="Upload.dc.html" style="height: 52px; border-radius: 14px; background: #0F5E5A; color: #FFFFFF; display: flex; align-items: center; justify-content: center; gap: 8px; font-size: 17px; font-weight: 800; text-decoration: none">
-        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 8a2 2 0 0 1 2-2h2.5L9 4h6l1.5 2H19a2 2 0 0 1 2 2v10a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><circle cx="12" cy="13" r="3.5"/></svg>
-        عکس بگیرید و بفرستید
-      </a>
-    </article>
+      </article>
+    </sc-if>
 
     <article style="border-radius: 20px; background: #FFFFFF; border: 1px solid #EADFCF; padding: 14px; display: flex; gap: 12px; align-items: center">
       <span style="width: 54px; height: 62px; flex: none; border-radius: 27px 27px 12px 12px; background: #E2EEEB; color: #0F5E5A; display: flex; align-items: center; justify-content: center"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 3h12v18l-3-2-3 2-3-2-3 2z"/><path d="M9 8h6M9 12h6M9 16h3"/></svg></span>
@@ -171,10 +183,18 @@ a{color:#0F5E5A}a:hover{color:#0B4744}
   </main>
 
   <footer style="padding: 12px 20px 18px; border-top: 1px solid #EADFCF; background: #FBF7F0; display: flex; flex-direction: column; gap: 10px">
-    <a href="Upload.dc.html" style="width: 100%; height: 60px; border-radius: 16px; background: #0F5E5A; color: #FFFFFF; display: flex; align-items: center; justify-content: center; gap: 10px; font-size: 19px; font-weight: 800; text-decoration: none; box-shadow: 0 8px 18px rgba(15,94,90,0.22)">
-      فرستادن شناسنامه
-      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M19 12H5"/><path d="m11 6-6 6 6 6"/></svg>
-    </a>
+    <sc-if value="{{notSent}}" hint-placeholder-val="{{true}}">
+      <a href="Upload.dc.html" style="width: 100%; height: 60px; border-radius: 16px; background: #0F5E5A; color: #FFFFFF; display: flex; align-items: center; justify-content: center; gap: 10px; font-size: 19px; font-weight: 800; text-decoration: none; box-shadow: 0 8px 18px rgba(15,94,90,0.22)">
+        فرستادن شناسنامه
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M19 12H5"/><path d="m11 6-6 6 6 6"/></svg>
+      </a>
+    </sc-if>
+    <sc-if value="{{sent}}" hint-placeholder-val="{{false}}">
+      <a href="Consent.dc.html" style="width: 100%; height: 60px; border-radius: 16px; background: #0F5E5A; color: #FFFFFF; display: flex; align-items: center; justify-content: center; gap: 10px; font-size: 19px; font-weight: 800; text-decoration: none; box-shadow: 0 8px 18px rgba(15,94,90,0.22)">
+        ادامه: رضایت‌نامه
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M19 12H5"/><path d="m11 6-6 6 6 6"/></svg>
+      </a>
+    </sc-if>
     <div style="display: flex; gap: 10px">
       <a href="Main.dc.html" style="flex: 1; height: 52px; border-radius: 14px; background: #F3EBDD; color: #1F2328; display: flex; align-items: center; justify-content: center; font-size: 16px; font-weight: 700; text-decoration: none">بعداً ادامه می‌دهم</a>
       <button type="button" style="flex: 1; height: 52px; border-radius: 14px; border: 1.5px solid #0F5E5A; background: #FFFFFF; color: #0F5E5A; display: flex; align-items: center; justify-content: center; gap: 8px; font-size: 16px; font-weight: 800; cursor: pointer">
@@ -190,10 +210,19 @@ a{color:#0F5E5A}a:hover{color:#0B4744}
 <script>
 class Component extends DCLogic {
   renderVals() {
-    return {};
+    let stored = false;
+    try { stored = window.sessionStorage.getItem('hv_birth_sent') === '1'; } catch (e) {}
+    const sent = !!(this.props.sent ?? false) || stored;
+    return {
+      sent: sent,
+      notSent: !sent,
+      seg4: sent ? '#9FD3CB' : '#F4B93A',
+      seg5: sent ? '#F4B93A' : 'rgba(255,255,255,0.22)',
+      summary: sent ? '۲ در حال بررسی · ۱ عکس دوباره · ۱ هنوز نفرستاده' : '۱ در حال بررسی · ۱ عکس دوباره · ۲ هنوز نفرستاده‌اید'
+    };
   }
 }
-HV.mount(Component, {});
+HV.mount(Component, {"sent": {"editor": "boolean", "default": false, "section": "وضعیت پرونده"}});
 </script>
 </body>
 </html>

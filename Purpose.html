@@ -139,6 +139,9 @@ a{color:#0F5E5A}a:hover{color:#0B4744}
 <script src="assets/hv-runtime.js"></script>
 <script>
 class Component extends DCLogic {
+  componentDidMount() {
+    try { window.sessionStorage.removeItem('hv_birth_sent'); } catch (e) {}
+  }
   renderVals() {
     const sel = (this.state && this.state.sel) || 'life';
     const ids = { Life: 'life', Marriage: 'marriage', Child: 'child', Biz: 'biz', Emdad: 'emdad', Unsure: 'unsure' };
